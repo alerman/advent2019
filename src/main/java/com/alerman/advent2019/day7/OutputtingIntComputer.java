@@ -10,7 +10,7 @@ public class OutputtingIntComputer {
     public void setHalted(boolean halted) {
         this.halted = halted;
     }
-
+ long lastOutput = 0;
     boolean halted = false;
 
     String id = "";
@@ -82,7 +82,7 @@ public class OutputtingIntComputer {
                         String output = firstParamImmediate ? splitInput[opcodeIndex + 1] : splitInput[Integer.parseInt(splitInput[opcodeIndex + 1])];
                         //System.out.println(output);
                         returnCode = Integer.parseInt(output);
-                        return returnCode;
+                        lastOutput = returnCode;
                     }
 
                     if(opcode == 5)
